@@ -1,0 +1,20 @@
+{
+  "name": "Kuakata Coastal GIS (Geospatial Mamba)",
+  "image": "mambaorg/micromamba:latest",
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python",
+        "python.terminal.activateEnvironment": true
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  },
+
+  "postCreateCommand": "micromamba install -y -n base -c conda-forge python=3.11 gdal rasterio geopandas shapely pystac-client planetary-computer planet numpy requests matplotlib black && micromamba run -n base pip install --upgrade pip"
+}
